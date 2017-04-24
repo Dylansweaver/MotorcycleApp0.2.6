@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X0N-cV-Xq9">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Cdm-I1-iAL">
+            <objects>
+                <viewController id="X0N-cV-Xq9" customClass="ViewController" customModule="MotorcycleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lck-jc-29Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="tmV-Is-WVG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7bR-Vc-4oh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="we2-DL-nBf">
+                                        <rect key="frame" x="0.0" y="54" width="414" height="638"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="lJw-3s-ogf" appends="YES" id="rjY-r3-dp1"/>
+                                        </connections>
+                                    </mapView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NdJ-Jo-605">
+                                        <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <items>
+                                            <barButtonItem title="Gas Stations" id="Hb3-BF-aZD">
+                                                <connections>
+                                                    <action selector="gasStationButton:" destination="X0N-cV-Xq9" id="98r-pa-Ovn"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Search" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5VH-Ch-Gty">
+                                        <rect key="frame" x="0.0" y="25" width="367" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        <connections>
+                                            <action selector="textFieldReturn:" destination="X0N-cV-Xq9" eventType="editingDidEndOnExit" id="Q9I-1r-DY8"/>
+                                            <action selector="textFieldReturn:" destination="X0N-cV-Xq9" eventType="editingDidEnd" id="oC2-Ws-9g3"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0p-kx-5Gz">
+                                        <rect key="frame" x="366" y="25" width="48" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.153828141508215" green="0.27467837162174003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Me">
+                                            <color key="titleColor" red="0.98482896323364244" green="0.95571695409695068" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="myLocation:" destination="X0N-cV-Xq9" eventType="touchUpInside" id="Zps-hn-RbL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="we2-DL-nBf" id="sRk-wT-atq"/>
+                        <outlet property="textSearch" destination="5VH-Ch-Gty" id="gOn-lg-WKk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vuD-nP-Kqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lJw-3s-ogf">
+                    <connections>
+                        <action selector="gesture:" destination="X0N-cV-Xq9" id="MDA-Vo-A3T"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1114.4927536231885" y="244.56521739130437"/>
+        </scene>
+    </scenes>
+</document>
